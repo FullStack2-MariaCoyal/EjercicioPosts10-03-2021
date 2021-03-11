@@ -1,0 +1,44 @@
+<h1>Mensaje de la bd</h1>
+
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FS2</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+    <ul class="lista-invitados clearfix">
+        <li>
+            <div class="invitado">
+                <img src="{% static 'img/pez03.png' %}" alt="My image">
+            </div>
+        </li>
+        <li class="invitado">
+            <img src="{% static 'img/pez02.png' %}" alt="My image">
+
+        </li>
+    </ul>
+
+
+    <ul>
+        {% for post in lista_posts %}
+        <li>{{ post.mail }}</li>
+        <ul>
+            {{ post.nombre }}</li>
+            </li>
+        </ul>
+        {% endfor %}
+    </ul>
+</body>
+
+</html>
+
+
+{% endblock content %}
